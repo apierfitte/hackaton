@@ -1,17 +1,17 @@
-public class Objet extends Element {
-    // classe générale dont héritent les autres objets
+public class Equipement extends Element {
+    // classe générale dont héritent les autres Equipements
 
     // attributs
     private boolean magique;
     private Enchantement sort;
 
     // constructeurs
-    public Objet(boolean magique, String caractere) {
+    public Equipement(boolean magique, String caractere) {
         super(caractere);
         this.magique = magique;
     }
 
-    public Objet(String caractere) {
+    public Equipement(String caractere) {
         super(caractere);
         this.magique = false;
     }

@@ -81,11 +81,9 @@ Ces sorts s'appliquent sur les objets
 1. **è** coca-cola : très sucré, soif+1
 2. **&** bière de tradition allemande : soif-3 faim-1
 3. **~** powerade goût ice storm : soif-4 faim+1
-	
-## A ajouter
 
-* nourriture
-* boisson
-* potion
-* portes
+### Liste des potions
 
+0. **V** potion de vie : par défaut, +10PV
+1. **s** potion de poison : empoisonne
+2. **F** potion de force : par défaut, +2 force (-2 de santé si force max)

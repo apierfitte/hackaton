@@ -1,4 +1,4 @@
-public class Armure extends Objet {
+public class Armure extends Equipement {
 
     // attributs statiques
     public static final int NOMBREARMURES = 4;

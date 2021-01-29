@@ -5,6 +5,7 @@ public class etreVivant extends Element {
     private int force;
     private Arme arme;
     private Armure armure;
+    private boolean poison;
 
     // constructeur
     public etreVivant(int vie, int force, Arme arme, Armure armure, String caractere) {
@@ -14,11 +15,14 @@ public class etreVivant extends Element {
         this.arme = arme;
         this.armure = armure;
         this.enVie = true;
+        this.poison = false;
     }
 
     // méthodes
 
     // accesseurs
+
+    public boolean estEmpoisonne() { return poison; }
 
     public boolean estVivant() {
         if (vie <= 0) { enVie = false; }
@@ -43,4 +47,19 @@ public class etreVivant extends Element {
 
     public void changerArmure(Armure armure) { this.armure = armure; }
     public void changerArme(Arme arme) {this.arme = arme; }
+
+    public void empoisonner() { this.poison = true; }
+
+    public void boirePotion(PotionVie p) { this.vie += p.renvoieModificateur(); }
+    public void boirePotion(PotionForce p) {
+        int n = p.renvoieModificateur();
+        if (force >= 20 - n) {
+            vie -= 2;
+        }
+        else {
+            force += n;
+        }
+    }
+
+    public void boirePotion(PotionPoison p) { this.empoisonner(); }
 }

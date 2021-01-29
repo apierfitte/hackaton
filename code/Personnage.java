@@ -10,7 +10,6 @@ public class Personnage extends etreVivant {
     private int argent;
     private int faim;
     private int soif;
-    private boolean poison;
     private boolean[] pouvoirs; // pouvoirs[i]=true <=> le héros a le pouvoir i (cf. readme pour numéro des pouvoirs)
 
     // constructeurs
@@ -19,7 +18,6 @@ public class Personnage extends etreVivant {
         argent = 0;
         faim = 0;
         soif = 0;
-        poison = false;
         pouvoirs = new boolean[NOMBREPOUVOIRS];
     }
 
@@ -33,7 +31,6 @@ public class Personnage extends etreVivant {
 
     public int renvoieSoif() { return soif; }
 
-    public boolean estEmpoisonne() { return poison; }
 
     // autres méthodes
 
@@ -55,5 +52,4 @@ public class Personnage extends etreVivant {
     public void assoifer() {soif++; }
     public void assoifer(int volume) {soif += volume; }
 
-    public void empoisonner() { this.poison = true; }
 }
