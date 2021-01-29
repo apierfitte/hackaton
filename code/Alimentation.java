@@ -1,4 +1,7 @@
 public class Alimentation extends Consommable {
+    // attributs statiques
+    private static final int NOMBREALIMENTS = 9;
+    
     // attributs
     private int faim;
     private int soif;

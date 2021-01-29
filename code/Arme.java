@@ -2,30 +2,14 @@ public class Arme extends Equipement {
     // atributs statiques
     public final static int NOMBREARMES = 7;  
 
-    // attributs
-    private int degats;
-
-
     // constructeur
     public Arme(int degats, boolean magique) {
-        super(magique, "A");
-        this.degats = degats;
-
-        if (magique) { this.degats += this.renvoieSort().renvoieModificateur(); }
-
+        super(degats, magique, "A");
     }
 
     public Arme(int degats) {
-        super("A");
-        this.degats = degats;
+        super(degats, "A");
     }
-
-    // méthode
-    public int renvoieDegats() {
-        return(this.degats);
-    }
-
-
 }
 
 class repartie extends Arme {

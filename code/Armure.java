@@ -3,27 +3,14 @@ public class Armure extends Equipement {
     // attributs statiques
     public static final int NOMBREARMURES = 4;
 
-    // attributs
-    private int armure;
-
     // constructeurs
     public Armure(int armure, boolean magique) {
-        super(magique, "B");
-        this.armure = armure;
-
-        if (magique) { this.armure += this.renvoieSort().renvoieModificateur(); }
+        super(armure, magique, "B");
     }
 
     public Armure(int armure) {
-        super("B");
-        this.armure = armure;
+        super(armure, "B");
     }
-
-    // méthode
-    public int renvoieArmure() {
-        return(this.armure);
-    }
-
 }
 
 class colRoule extends Armure {
