@@ -1,4 +1,4 @@
-public class Equipement extends Element {
+public class Equipement extends Consommable {
     // classe générale dont héritent les autres Equipements
 
     // attributs
