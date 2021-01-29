@@ -10,7 +10,6 @@ public class Personnage extends etreVivant {
     private int argent;
     private int faim;
     private int soif;
-    private boolean[] pouvoirs; // pouvoirs[i]=true <=> le héros a le pouvoir i (cf. readme pour numéro des pouvoirs)
 
     // constructeurs
     public Personnage() { //initialise un personnage
@@ -18,7 +17,6 @@ public class Personnage extends etreVivant {
         argent = 0;
         faim = 0;
         soif = 0;
-        pouvoirs = new boolean[NOMBREPOUVOIRS];
     }
 
     // méthodes

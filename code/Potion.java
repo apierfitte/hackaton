@@ -1,4 +1,7 @@
 public class Potion extends Consommable {
+    // attributs statiques
+    private final static int NOMBREPOTIONS = 3;
+
     // attributs
     private int modificateur;
 

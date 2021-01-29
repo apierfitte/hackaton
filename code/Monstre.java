@@ -19,3 +19,9 @@ class Ecolo extends Monstre {
         super(80, 7, new poireau(), new pagne());
     }
 }
+
+class Valou extends Monstre {
+    public Valou()  {
+        super(110, 10, new gesteDesordonne(), new pagne());
+    }
+}
