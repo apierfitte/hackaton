@@ -4,10 +4,10 @@ enum Emplacement{
 
 
 public class Salle {
-    private int largeur;
-    private int hauteur;
-    private int numeroSalle;
-    private Element[][] salle;
+    public int largeur;
+    public int hauteur;
+    public int numeroSalle;
+    public Element[][] salle;
 
     public Salle(int l, int h, int nbsalle){
         try{
