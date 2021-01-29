@@ -66,5 +66,26 @@ Ces sorts s'appliquent sur les objets
 	* force : 7
 	* arme : poireau
 	* armure : pagne en feuilles de cocotier
+	
+### Liste de la nourriture
 
+0. **¨** : Antinourriture+faim 2
+1. **T** tacos 69 : viandes-faim 7+soif 2
+2. **J** : jonquilles-faim 1-soif 1
+3. **f** conte de : fées nourriture ; intellectuelle-faim 5
+4. **w** petit wrap des familles : faim-6 soif+1
+
+### Liste des boissons
+
+0. **o** eau : soif-2
+1. **è** coca-cola : très sucré, soif+1
+2. **&** bière de tradition allemande : soif-3 faim-1
+3. **~** powerade goût ice storm : soif-4 faim+1
+	
+## A ajouter
+
+* nourriture
+* boisson
+* potion
+* portes
 
