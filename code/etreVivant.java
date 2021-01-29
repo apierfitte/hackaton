@@ -39,7 +39,9 @@ public class etreVivant extends Element {
 
     // autres méthodes
 
-    public void blesser() { vie--; }
+    public void blesser() { 
+        vie--; 
+        }
     public void blesser(int degats) { vie -= degats; }
 
     public void soigner() { vie++; }

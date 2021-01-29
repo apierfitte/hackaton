@@ -14,7 +14,7 @@ class Combat {
         Auguste = M;
         Xavier = P;
 
-        int P_arme = Xavier.renvoieArme().renvoieDegats();
+        int P_arme = Xavier.renvoieArme().renvoieStats();
         
         double p_attaque = (int) 1 + 5 * Math.random();
         int P_attaque = (int) p_attaque;
@@ -22,14 +22,14 @@ class Combat {
         double P_faim = Xavier.renvoieFaim();
         double P_soif = Xavier.renvoieSoif();
         double ATTAQUE_P = P_arme * P_attaque * P_force - P_faim - P_soif;
-        degatsP =(int) ATTAQUE_P/Auguste.renvoieArmure().renvoieArmure();
+        degatsP =(int) ATTAQUE_P/Auguste.renvoieArmure().renvoieStats();
 
-        int M_arme = Auguste.renvoieArme().renvoieDegats();
+        int M_arme = Auguste.renvoieArme().renvoieStats();
         double m_attaque = 1 + 5 * Math.random();
         int M_attaque = (int) m_attaque;
         int M_force = Auguste.renvoieForce();
         double ATTAQUE_M = M_arme * M_attaque * M_force;
-        degatsM =(int) ATTAQUE_M/Xavier.renvoieArmure().renvoieArmure();
+        degatsM =(int) ATTAQUE_M/Xavier.renvoieArmure().renvoieStats();
     }
 
     public static void main (String[] args, Monstre M){
