@@ -4,6 +4,8 @@ import java.awt.event.*;
 @SuppressWarnings("serial")
 public class Deplacement extends Frame implements KeyListener {
 
+    private Salle piece;
+
     int x = 200, y = 200;
 
     // Constructeur
@@ -16,12 +18,20 @@ public class Deplacement extends Frame implements KeyListener {
     }
 
     public void paint(Graphics g) {
-        //g.drawString("x =" + x + ", y =" + y, 40, 30);
         g.drawRect(40, 40, 400, 400);
         g.setColor(Color.CYAN);
         g.fillRect(x,y, 30, 30);
+         for (int i = 0; i< piece.hauteur; i++) {    // parcours de la salle
+            for (int j = 0; j< piece.largeur; j++) {
+                if (piece.salle[i][j].getClass() == Monstre.class) {
+                    g.setColor(Color.BLACK);
+                    g.fillRect(x*i,y*j, 30, 30);
 
+                }
+            }
+        }
     }
+    
 
     public void keyTyped(KeyEvent ke) {
              // a priori inutile mais necessaire pour le foncrionnement
@@ -64,7 +74,7 @@ public class Deplacement extends Frame implements KeyListener {
     public static void main(String[] args) {
         Deplacement appli = new Deplacement();
         appli.setLocation(100, 100);
-        appli.setSize(600, 600);
+        appli.setSize(1800, 900);
         appli.setVisible(true);
     }
 }
