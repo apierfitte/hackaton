@@ -1,7 +1,7 @@
 public class Armure extends Objet {
 
     // attributs statiques
-    public static final int NOMBREARMURES = 3;
+    public static final int NOMBREARMURES = 4;
 
     // attributs
     private int armure;
@@ -10,10 +10,12 @@ public class Armure extends Objet {
     public Armure(int armure, boolean magique) {
         super(magique, "B");
         this.armure = armure;
+
+        if (magique) { this.armure += this.renvoieSort().renvoieModificateur(); }
     }
 
     public Armure(int armure) {
-        super(false);
+        super("B");
         this.armure = armure;
     }
 
@@ -26,30 +28,40 @@ public class Armure extends Objet {
 
 class colRoule extends Armure {
     public colRoule(boolean magique) {
-        super(, magique);
+        super(3, magique);
     }
 
     public colRoule() {
-        super();
+        super(3);
     }
 }
 
 class pagne extends Armure {
     public pagne(boolean magique) {
-        super(, magique);
+        super(5, magique);
     }
 
     public pagne() {
-        super();
+        super(5);
     }
 }
 
 class chemise extends Armure {
     public chemise(boolean magique) {
-        super(, magique);
+        super(2, magique);
     }
 
     public chemise() {
-        super();
+        super(2);
+    }
+}
+
+class Nu extends Armure {
+    public Nu(boolean magique) {
+        super(1, magique);
+    }
+
+    public Nu() {
+        super(1);
     }
 }

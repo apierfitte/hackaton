@@ -2,30 +2,20 @@ public class Monstre extends etreVivant {
     // attributs statiques 
     public static final int NOMBREMONSTRES = 2;
 
-    // attributs
-    private int vie;
-    private int force;
-    private Arme arme;
-    private Armure armure;
-
     // constructeurs
     public Monstre(int vie, int force, Arme arme, Armure armure) {
-        super("M");
-        this.vie = vie;
-        this.force = force;
-        this.arme = arme;
-        this.armure = armure;
+        super(vie, force, arme, armure, "M");
     }
 }
 
-class Lobbyiste {
+class Lobbyiste extends Monstre {
     public Lobbyiste() {
-        super();
+        super(75, 11, new appareilJuridique(), new chemise());
     }
 }
 
-class Ecolo {
+class Ecolo extends Monstre {
     public Ecolo() {
-        super();
+        super(80, 7, new poireau(), new pagne());
     }
 }

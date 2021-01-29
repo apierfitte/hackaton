@@ -44,8 +44,8 @@ Le héros démarre avec :
 
 Ces sorts s'appliquent sur les objets
 
-0. de mauvaise facture (pas très bien : baisse dégâts d'une arme ou baisse la protection d'une armure)
-1. très coupant (cool pour les armes, moins pour les armures)
+0. de mauvaise facture (pas très bien : baisse dégâts d'une arme ou baisse la protection d'une armure) : modificateur = -1
+1. très coupant (cool pour les armes, moins pour les armures) : modificateur = +2
 
 ### Liste des armures
 

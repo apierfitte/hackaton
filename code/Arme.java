@@ -1,6 +1,6 @@
 public class Arme extends Objet {
     // atributs statiques
-    public final static int NOMBREARMES = 4;  
+    public final static int NOMBREARMES = 7;  
 
     // attributs
     private int degats;
@@ -11,10 +11,12 @@ public class Arme extends Objet {
         super(magique, "A");
         this.degats = degats;
 
+        if (magique) { this.degats += this.renvoieSort().renvoieModificateur(); }
+
     }
 
     public Arme(int degats) {
-        super(false);
+        super("A");
         this.degats = degats;
     }
 
@@ -28,40 +30,54 @@ public class Arme extends Objet {
 
 class repartie extends Arme {
     public repartie(boolean magique) {
-        super(, magique);
+        super(6, magique);
     }
 
     public repartie() {
-        super();
+        super(6);
     }
 }
 
 class sensDeLaFete extends Arme {
     public sensDeLaFete(boolean magique) {
-        super(, magique);
+        super(7, magique);
     }
 
     public sensDeLaFete() {
-        super();
+        super(7);
     }
 }
 
 class confianceEnSoi extends Arme {
     public confianceEnSoi(boolean magique) {
-        super(, magique);
+        super(8, magique);
     }
 
     public confianceEnSoi() {
-        super();
+        super(8);
     }
 }
 
 class compassion extends Arme {
     public compassion(boolean magique) {
-        super(, magique);
+        super(5, magique);
     }
 
     public compassion() {
-        super();
+        super(5);
     }
+}
+
+class Poings extends Arme {
+    public Poings() { super(2); }
+}
+
+class appareilJuridique extends Arme {
+    public appareilJuridique(boolean magique) { super(4, magique); }
+    public appareilJuridique() { super(4); }
+}
+
+class poireau extends Arme {
+    public poireau(boolean magique) { super(3, magique); }
+    public poireau() { super(3); }
 }
