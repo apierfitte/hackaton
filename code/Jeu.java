@@ -30,8 +30,8 @@ public class Jeu {
         appli.setSize(1800, 900);
         appli.setVisible(true);
 
-        int x = appli.retourAbscisseEvenement();
-        int y = appli.retourOrdonneeEvenement();
+        int y = appli.retourAbscisseEvenement();
+        int x = appli.retourOrdonneeEvenement();
         Element truc = appli.renvoieEvenement();
 
         while (!((appli.retourAbscisse() == x) & (appli.retourOrdonnee() == y))) {

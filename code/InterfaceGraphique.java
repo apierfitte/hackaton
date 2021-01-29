@@ -9,7 +9,10 @@ public class InterfaceGraphique extends Frame implements KeyListener {
     public Salle piece;
 
     private int x = 30, y = 30;
+    private int icarre = 1, jcarre = 1;
     private int a, b;
+    private int xporte, yporte;
+    private int xescalier, yescalier;
     private Element evenement;
 
     // Constructeur
@@ -23,26 +26,29 @@ public class InterfaceGraphique extends Frame implements KeyListener {
             for (int j = 0; j< this.piece.largeur; j++) {
 
                 if ( (piece.salle[i][j] instanceof Monstre) && (((Monstre) piece.salle[i][j]).estVivant()) ) {
-                    a = 30 + 30*i;
-                    b = 60 + 30*j;
+                    a = i;
+                    b = j;
                     evenement = piece.salle[i][j];
 
                 }
                 if ( (piece.salle[i][j] instanceof Equipement) && (((Equipement) piece.salle[i][j]).estConsomme() == false) ) {
-                    a = 30 + 30*i;
-                    b = 60 + 30*j;
+                    a = i;
+                    b = j;
                     evenement = piece.salle[i][j];
 
                 }
                 if ( (piece.salle[i][j] instanceof Consommable) && ((Consommable) (piece.salle[i][j])).estConsomme() == false)  {
-                    a = 30 + 30*i;
-                    b = 60 + 30*j;
+                    a = i;
+                    b = j;
                     evenement = piece.salle[i][j];
                 }
                 if (piece.salle[i][j] instanceof Escalier) {
-                    a = 30 + 30*i;
-                    b = 60 + 30*j;
-                    evenement = piece.salle[i][j];
+                    xescalier = i;
+                    yescalier = j;
+                }
+                if  (piece.salle[i][j] instanceof Porte) {
+                    xporte = i;
+                    yporte = j;
                 }
             }
     }
@@ -50,11 +56,11 @@ public class InterfaceGraphique extends Frame implements KeyListener {
     }
 
     public int retourAbscisse() {
-        return x + 90;
+        return icarre;
     }
 
     public int retourOrdonnee() {
-        return y;
+        return jcarre;
     }
 
     public int retourOrdonneeEvenement() {
@@ -121,19 +127,23 @@ public class InterfaceGraphique extends Frame implements KeyListener {
 
         switch(keyCode) {
             case KeyEvent.VK_UP:
+                jcarre--;
                 if (y > 60) {y =y -30;}
 
                 break;
 
             case KeyEvent.VK_DOWN:
+                jcarre++;
                 if (y < 60+ 30 *this.piece.largeur) {y =y +30;}
                 break;
 
             case KeyEvent.VK_LEFT:
+                icarre--;
                 if (x > 30) {x =x -30;}
                 break;
 
             case KeyEvent.VK_RIGHT:
+                icarre++;
                 if (x < 30+ 30 *this.piece.hauteur) {x =x +30;}
                 break;
         }
