@@ -19,7 +19,9 @@ public class Etage {
             this.salles[i].packSalle();
         }
     }
-
+    public int renvoieNbSalle(){
+        return this.nbSalle;
+    }
     public void afficher(){
         for (int i = 0 ; i < nbSalle ; i ++){
             salles[i].afficher();
