@@ -19,10 +19,14 @@ public class Etage {
             this.salles[i].packSalle();
         }
     }
+
+    public void afficher(){
+        for (int i = 0 ; i < nbSalle ; i ++){
+            salles[i].afficher();
+        }
+    }
     public static void main(String[] args){
         Etage eta = new Etage();
-        for(int j = 0 ; j<eta.salles.length ; j++){
-            eta.salles[j].afficher();
-        }
+        eta.afficher();
     }
 }
