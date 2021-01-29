@@ -22,6 +22,10 @@ public class Etage {
     public int renvoieNbSalle(){
         return this.nbSalle;
     }
+
+    public Salle[] renvoieSalles() {
+        return salles;
+    }
     public void afficher(){
         for (int i = 0 ; i < nbSalle ; i ++){
             salles[i].afficher();

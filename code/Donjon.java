@@ -22,6 +22,10 @@ public class Donjon {
         }
     }
 
+    public Etage[] renvoieEtages() {
+        return this.etages;
+    }
+
     public void packing(){
        for (int eta = 0 ; eta < this.nbEtage ; eta ++){
            for (int sal = 0 ; sal < this.etages[eta].renvoieNbSalle() ; sal ++){
@@ -37,8 +41,8 @@ public class Donjon {
                else {
                    if (sal!=0){
                     Element[] objets = new Element[]{new antiNourriture(), new tacos69(), new jonquille(), new conteDeFees(), new wrap(), new eau(), new cocaCola(),
-                        new biereTradi(), new powerade(), new repartie(), new sensDeLaFete(), new confianceEnSoi(), new compassion(), new Poings(), new appareilJuridique(),
-                        new poireau(), new colRoule(), new pagne(), new chemise(), new Nu(), new Lobbyiste(), new Ecolo(), new PotionVie(), new PotionPoison(), new PotionForce() };
+                        new biereTradi(), new powerade(), new repartie(), new sensDeLaFete(), new confianceEnSoi(), new compassion(), new appareilJuridique(),
+                        new poireau(), new colRoule(), new pagne(), new chemise(), new Lobbyiste(), new Ecolo(), new PotionVie(), new PotionPoison(), new PotionForce() };
                             int k = r.nextInt(objets.length);
                             this.etages[eta].salles[sal].packElement(hObj,lObj,objets[k]);
                    }
@@ -48,10 +52,5 @@ public class Donjon {
             }
            }
        } 
-    }
-    public static void main(String[] args){
-        Donjon D = new Donjon();
-        D.packing();
-        D.afficher();
     }
 }

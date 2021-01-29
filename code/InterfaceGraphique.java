@@ -2,19 +2,71 @@ import java.awt.*;
 import java.awt.event.*;
 
 @SuppressWarnings("serial")
+
+
 public class InterfaceGraphique extends Frame implements KeyListener {
 
     public Salle piece;
 
-    int x = 30, y = 30;
+    private int x = 30, y = 30;
+    private int a, b;
+    private Element evenement;
 
     // Constructeur
 
-    public InderfaceGraphique(Salle piece) {
+    public InterfaceGraphique(Salle piece) {
         this.piece = piece;
         addKeyListener(this);
         addWindowListener(new EcouteurPourFermetureFenetre());  
 
+        for (int i = 0; i< this.piece.hauteur; i++) {    // parcours de la salle
+            for (int j = 0; j< this.piece.largeur; j++) {
+
+                if ( (piece.salle[i][j] instanceof Monstre) && (((Monstre) piece.salle[i][j]).estVivant()) ) {
+                    a = 30 + 30*i;
+                    b = 60 + 30*j;
+                    evenement = piece.salle[i][j];
+
+                }
+                if ( (piece.salle[i][j] instanceof Equipement) && (((Equipement) piece.salle[i][j]).estConsomme() == false) ) {
+                    a = 30 + 30*i;
+                    b = 60 + 30*j;
+                    evenement = piece.salle[i][j];
+
+                }
+                if ( (piece.salle[i][j] instanceof Consommable) && ((Consommable) (piece.salle[i][j])).estConsomme() == false)  {
+                    a = 30 + 30*i;
+                    b = 60 + 30*j;
+                    evenement = piece.salle[i][j];
+                }
+                if (piece.salle[i][j] instanceof Escalier) {
+                    a = 30 + 30*i;
+                    b = 60 + 30*j;
+                    evenement = piece.salle[i][j];
+                }
+            }
+    }
+
+    }
+
+    public int retourAbscisse() {
+        return x + 90;
+    }
+
+    public int retourOrdonnee() {
+        return y;
+    }
+
+    public int retourOrdonneeEvenement() {
+        return a;
+    }
+
+    public int retourAbscisseEvenement() {
+        return b;
+    }
+
+    public Element renvoieEvenement() {
+        return evenement;
     }
 
     public void paint(Graphics g) {
@@ -39,13 +91,17 @@ public class InterfaceGraphique extends Frame implements KeyListener {
                     g.fillRect(30*i,30*j, 30, 30);
 
                 }
+                if (piece.salle[i][j] instanceof Escalier) {
+                    g.setColor(Color.PINK);
+                    g.fillRect(30*i,30*j, 30, 30);
+                }
             }
         }
     }
     
 
     public void keyTyped(KeyEvent ke) {
-             // a priori inutile mais necessaire pour le foncrionnement
+             // a priori inutile mais necessaire pour le fonctionnement
     }
 
     public void keyReleased(KeyEvent ke) {
@@ -79,15 +135,6 @@ public class InterfaceGraphique extends Frame implements KeyListener {
 
         repaint();
 
-
     }
 
-    public static void main(String[] args) {
-        Salle piece = new Salle(10,10,0);
-        piece.packElement(3,3, new Lobbyiste());
-        InterfaceGraphique appli = new InterfaceGraphique(piece);
-        appli.setLocation(100, 100);
-        appli.setSize(1800, 900);
-        appli.setVisible(true);
-    }
 }
