@@ -16,8 +16,19 @@ public class etreVivant extends Element {
         this.enVie = true;
     }
 
-    // méthode 
+    // méthodes
+
+    // accesseurs
+
     public boolean estVivant() {
         return enVie;
     }
+
+    public int renvoiePV() { return vie; }
+
+    public int renvoieForce() { return force; }
+
+    public Arme renvoieArme() { return arme; }
+
+    public Armure renvoieArmure() { return armure; }
 }

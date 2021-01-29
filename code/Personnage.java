@@ -23,4 +23,14 @@ public class Personnage extends etreVivant {
     }
 
     // méthodes
+
+    // accesseurs
+
+    public int renvoieArgent() { return argent; }
+
+    public int renvoieFaim() { return faim; }
+
+    public int renvoieSoif() { return soif; }
+
+    public boolean estEmpoisonne() { return poison; }
 }
