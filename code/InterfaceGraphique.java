@@ -2,7 +2,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 @SuppressWarnings("serial")
-public class Deplacement extends Frame implements KeyListener {
+public class InterfaceGraphique extends Frame implements KeyListener {
 
     public Salle piece;
 
@@ -10,7 +10,7 @@ public class Deplacement extends Frame implements KeyListener {
 
     // Constructeur
 
-    public Deplacement(Salle piece) {
+    public InderfaceGraphique(Salle piece) {
         this.piece = piece;
         addKeyListener(this);
         addWindowListener(new EcouteurPourFermetureFenetre());  
@@ -85,7 +85,7 @@ public class Deplacement extends Frame implements KeyListener {
     public static void main(String[] args) {
         Salle piece = new Salle(10,10,0);
         piece.packElement(3,3, new Lobbyiste());
-        Deplacement appli = new Deplacement(piece);
+        InterfaceGraphique appli = new InterfaceGraphique(piece);
         appli.setLocation(100, 100);
         appli.setSize(1800, 900);
         appli.setVisible(true);
