@@ -81,3 +81,8 @@ class poireau extends Arme {
     public poireau(boolean magique) { super(3, magique); }
     public poireau() { super(3); }
 }
+
+class gesteDesordonne extends Arme {
+    public gesteDesordonne(boolean magique) { super(6, magique)}
+    public gesteDesordonne() { super(6);}
+}
