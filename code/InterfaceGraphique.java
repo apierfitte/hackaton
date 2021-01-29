@@ -14,6 +14,7 @@ public class InterfaceGraphique extends Frame implements KeyListener {
     private int xporte, yporte;
     private int xescalier, yescalier;
     private Element evenement;
+    private Porte p;
 
     // Constructeur
 
@@ -49,12 +50,14 @@ public class InterfaceGraphique extends Frame implements KeyListener {
                 if  (piece.salle[i][j] instanceof Porte) {
                     xporte = i;
                     yporte = j;
+                    p = (Porte)piece.salle[i][j];
                 }
             }
     }
 
     }
 
+    public Porte renvoiePorte() { return p; }
     public int retourAbscisse() {
         return icarre;
     }
@@ -74,6 +77,9 @@ public class InterfaceGraphique extends Frame implements KeyListener {
     public Element renvoieEvenement() {
         return evenement;
     }
+
+    public int renvoiexporte() { return xporte; }
+    public int renvoieyporte() { return yporte; }
 
     public void paint(Graphics g) {
         g.drawRect(29, 59, 30+ 30 *this.piece.hauteur, 60+ 30*this.piece.largeur);

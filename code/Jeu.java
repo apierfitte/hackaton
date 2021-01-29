@@ -30,20 +30,31 @@ public class Jeu {
         appli.setSize(1800, 900);
         appli.setVisible(true);
 
-        int y = appli.retourAbscisseEvenement();
-        int x = appli.retourOrdonneeEvenement();
+        int ytruc = appli.retourAbscisseEvenement();
+        int xtruc = appli.retourOrdonneeEvenement();
+        int xporte = appli.renvoiexporte();
+        int yporte = appli.renvoieyporte();
         Element truc = appli.renvoieEvenement();
+        Porte p = appli.renvoiePorte();
 
-        while (!((appli.retourAbscisse() == x) & (appli.retourOrdonnee() == y))) {
-            try { Thread.sleep(1000); }
-            catch(Exception e) {}
-
-            System.out.println("xobjet : " + x);
-            System.out.println("yobjet : " + y);
-            System.out.println("xperso : " + appli.retourAbscisse());
-            System.out.println(" yperso : " + appli.retourOrdonnee());
-        }
+        boolean b = true;
+        while (b) {
+            try{Thread.sleep(2000);}
+            catch (Exception e) {}
+            System.out.println("x : " + appli.retourAbscisse());
+            System.out.println("y : " + appli.retourOrdonnee());
+            System.out.println("xporte :" + xporte);
+            System.out.println("yporte : " + yporte);
+        if ((appli.retourAbscisse() == xtruc) & (appli.retourOrdonnee() == ytruc)) {
             System.out.println(nomJoueur + " a rencontré un " + truc.getClass().getName());
+        }
+        if (((appli.retourAbscisse() == xporte) & (appli.retourOrdonnee() == yporte))) {
+            b = false;
+            System.out.print("port");
+        }
+        }
+        appli.dispose();
+            
     }
 
 
@@ -77,8 +88,12 @@ public class Jeu {
         Donjon donjon = jeu.renvoieDonjon();
 
         donjon.packing();
-        donjon.afficher();
         
+        for (int i=0; i<donjon.renvoieNbEtage();i++) {
+            for (int j=0; j<donjon.renvoieEtages()[i].renvoieNbSalle(); j++){
+                jeu.gestionSalle(donjon.renvoieEtages()[i].renvoieSalles()[j]);
+            }
+        }
         jeu.gestionSalle(donjon.renvoieEtages()[0].renvoieSalles()[1]);
     }
 

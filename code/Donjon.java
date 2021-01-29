@@ -55,7 +55,7 @@ public class Donjon {
                    int hObje = q.nextInt(h-2)+1;
                    int hObj2 = q.nextInt(this.etages[eta].salles[sal+1].hauteur-2)+1;
                    this.etages[eta].salles[sal].packElement(hObje,this.etages[eta].salles[sal].largeur-1, new Porte(0,1,eta,new int[]{hObje,this.etages[eta].salles[sal].largeur-1},new int[]{hObj2,0}));
-                   this.etages[eta].salles[sal+1].packElement(hObj2,0, new Porte(1,0,eta,new int[]{hObj2,0},new int[]{hObje,this.etages[eta].salles[sal].largeur-1}));
+                //    this.etages[eta].salles[sal+1].packElement(hObj2,0, new Porte(1,0,eta,new int[]{hObj2,0},new int[]{hObje,this.etages[eta].salles[sal].largeur-1}));
                }
                else {
                    if((sal+1)!=this.etages[eta].renvoieNbSalle()){
@@ -63,7 +63,7 @@ public class Donjon {
                         int hObjet = p.nextInt(h-2)+1;
                         int hObje2 = p.nextInt(this.etages[eta].salles[sal+1].hauteur-2)+1;
                         this.etages[eta].salles[sal].packElement(hObjet,this.etages[eta].salles[sal].largeur-1, new Porte(sal,sal+1,eta,new int[]{hObjet,this.etages[eta].salles[sal].largeur-1},new int[]{hObje2,0}));
-                        this.etages[eta].salles[sal+1].packElement(hObje2,0, new Porte(sal+1,sal,eta,new int[]{hObje2,0},new int[]{hObjet,this.etages[eta].salles[sal].largeur-1}));
+                        // this.etages[eta].salles[sal+1].packElement(hObje2,0, new Porte(sal+1,sal,eta,new int[]{hObje2,0},new int[]{hObjet,this.etages[eta].salles[sal].largeur-1}));
                     }
                }
             }
