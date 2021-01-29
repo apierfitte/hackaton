@@ -7,6 +7,13 @@ public class Jeu {
     private Donjon donjon;
     private String nomJoueur;
 
+    //--------------------------------------------------------------------
+    // CONSTRUCTEUR ------------------------------------------------------
+    //--------------------------------------------------------------------
+    public Jeu(String nomJoueur) {
+        this.nomJoueur = nomJoueur;
+        this.donjon = new Donjon();
+    }
 
 
 
@@ -33,7 +40,7 @@ public class Jeu {
 
         System.out.println("Bienvenue à toi, " + nom + ".");
 
-        
+
     }
 
 }
