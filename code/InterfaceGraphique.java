@@ -8,13 +8,9 @@ public class InterfaceGraphique extends Frame implements KeyListener {
 
     public Salle piece;
 
-<<<<<<< HEAD
     private int x = 30, y = 30;
     private int a, b;
     private Element evenement;
-=======
-    int x = 30, y = 60;
->>>>>>> 4c34a6afb8d272dffb175c34931ecf019a75f3f4
 
     // Constructeur
 
@@ -98,6 +94,7 @@ public class InterfaceGraphique extends Frame implements KeyListener {
                 if (piece.salle[i][j] instanceof Escalier) {
                     g.setColor(Color.PINK);
                     g.fillRect(30*i,30*j, 30, 30);
+                }
                 if  (piece.salle[i][j] instanceof Porte) {
                     g.setColor(Color.YELLOW);
                     g.fillRect(30*i,30*j, 30, 30);
@@ -145,15 +142,4 @@ public class InterfaceGraphique extends Frame implements KeyListener {
 
     }
 
-<<<<<<< HEAD
-=======
-    public static void main(String[] args) {
-        Salle piece = new Salle(5,7,0);
-        piece.packElement(3,3, new Lobbyiste());
-        InterfaceGraphique appli = new InterfaceGraphique(piece);
-        appli.setLocation(100, 100);
-        appli.setSize(600, 600);
-        appli.setVisible(true);
-    }
->>>>>>> 4c34a6afb8d272dffb175c34931ecf019a75f3f4
 }
