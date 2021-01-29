@@ -4,16 +4,20 @@ public class Equipement extends Element {
     // attributs
     private boolean magique;
     private Enchantement sort;
+    private int attribut;
 
     // constructeurs
-    public Equipement(boolean magique, String caractere) {
+    public Equipement(int attribut, boolean magique, String caractere) {
         super(caractere);
         this.magique = magique;
+        this.attribut = attribut;
+        if (magique) { this.attribut += this.renvoieSort().renvoieModificateur(); }
     }
 
-    public Equipement(String caractere) {
+    public Equipement(int attribut, String caractere) {
         super(caractere);
         this.magique = false;
+        this.attribut = attribut;
     }
 
     // méthodes
@@ -22,5 +26,7 @@ public class Equipement extends Element {
     }
 
     public Enchantement renvoieSort() { return this.sort; }
+
+    public int renvoieStats() { return this.attribut; }
 
 }
