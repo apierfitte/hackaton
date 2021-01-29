@@ -44,7 +44,7 @@ public class Salle {
     }
     public void packElement(int i, int j, Element elem){
         try {
-            if ((i<=0)|(i>=this.hauteur)|(j<=0)|(j>=this.largeur)){
+            if ((i<0)|(i>this.hauteur)|(j<0)|(j>this.largeur)){
                 throw new MonException("Coordonnées non valides");
             }
         }
