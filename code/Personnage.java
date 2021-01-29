@@ -1,10 +1,9 @@
-public class Personnage {
+public class Personnage extends etreVivant {
     // personnage de xavier sécheresse
 
-    // attributs
-    private final static int NOMBREPOUVOIRS = 2;
-    private final static int NOMBREARMES = 4;
+    public final static int NOMBREPOUVOIRS = 2;
 
+    // attributs
     private int vie;
     private int argent;
     private int force;
@@ -13,10 +12,11 @@ public class Personnage {
     private int soif;
     private boolean poison;
     private boolean[] pouvoirs; // pouvoirs[i]=true <=> le héros a le pouvoir i (cf. readme pour numéro des pouvoirs)
-    private boolean[] armes; // idem que pour les pouvoirs 
+    private Arme arme; // idem que pour les pouvoirs 
 
     // constructeurs
     public Personnage() { //initialise un personnage
+        super("@");
         vie = 100;
         argent = 0;
         force = 10;
@@ -25,7 +25,7 @@ public class Personnage {
         soif = 0;
         poison = false;
         pouvoirs = new boolean[NOMBREPOUVOIRS];
-        armes = new boolean[NOMBREARMES];
+        armes = null;
     }
 
     // méthodes
