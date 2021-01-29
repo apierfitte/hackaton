@@ -39,6 +39,11 @@ public class InterfaceGraphique extends Frame implements KeyListener {
                     g.fillRect(30*i,30*j, 30, 30);
 
                 }
+                if  (piece.salle[i][j] instanceof Porte) {
+                    g.setColor(Color.YELLOW);
+                    g.fillRect(30*i,30*j, 30, 30);
+
+                }
             }
         }
     }
